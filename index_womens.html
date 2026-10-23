@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LunaViva Womenswear Co., Ltd. | Ladies' Apparel Manufacturer & OEM/ODM Supplier</title>
+<style>
+  :root{
+    --brand:#b76a89;
+    --brand-dark:#8e4563;
+    --brand-soft:#f7e7ee;
+    --accent:#d98a5e;
+    --dark:#33272c;
+    --gray:#7b6f75;
+    --light:#fbf5f7;
+    --border:#eee0e7;
+    --white:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI","Helvetica Neue",Arial,"Microsoft YaHei",sans-serif;color:var(--dark);background:var(--white);line-height:1.6;}
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* Top bar */
+  .topbar{background:var(--brand-dark);color:#f3dde7;font-size:13px;}
+  .topbar .container{display:flex;justify-content:space-between;align-items:center;height:34px;}
+  .topbar .contact{display:flex;gap:18px;}
+
+  /* Header */
+  header.site{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+  .navbar{display:flex;align-items:center;justify-content:space-between;height:76px;}
+  .logo{display:flex;align-items:center;gap:12px;}
+  .logo-mark{width:46px;height:46px;background:linear-gradient(135deg,var(--brand),var(--accent));border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;letter-spacing:1px;}
+  .logo-text h1{font-size:20px;color:var(--brand-dark);line-height:1.2;}
+  .logo-text p{font-size:12px;color:var(--gray);letter-spacing:2px;text-transform:uppercase;}
+  nav.menu{display:flex;gap:32px;}
+  nav.menu a{font-size:15px;font-weight:600;color:var(--dark);padding:8px 2px;border-bottom:2px solid transparent;transition:.2s;}
+  nav.menu a:hover,nav.menu a.active{color:var(--brand);border-bottom-color:var(--brand);}
+  .quote-btn{background:var(--accent);color:#fff;padding:10px 22px;border-radius:24px;font-weight:700;font-size:14px;transition:.2s;}
+  .quote-btn:hover{background:#c7764a;}
+
+  /* Hero */
+  .hero{background:linear-gradient(120deg,#8e4563 0%,#b76a89 55%,#d08aa6 100%);color:#fff;}
+  .hero .container{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding:70px 24px;}
+  .hero-tag{display:inline-block;background:rgba(255,255,255,.16);padding:6px 16px;border-radius:20px;font-size:13px;letter-spacing:1px;margin-bottom:18px;}
+  .hero h2{font-size:38px;line-height:1.25;margin-bottom:18px;}
+  .hero h2 em{color:#ffd9c4;font-style:normal;}
+  .hero p{font-size:16px;color:#f3e3ec;margin-bottom:28px;max-width:520px;}
+  .hero-btns{display:flex;gap:16px;}
+  .btn-primary{background:var(--accent);color:#fff;padding:13px 30px;border-radius:26px;font-weight:700;font-size:15px;}
+  .btn-outline{border:1.5px solid rgba(255,255,255,.7);color:#fff;padding:13px 30px;border-radius:26px;font-weight:600;font-size:15px;}
+  .btn-outline:hover{background:rgba(255,255,255,.12);}
+  .hero-stats{display:flex;gap:34px;margin-top:34px;flex-wrap:wrap;}
+  .stat b{display:block;font-size:27px;color:#ffd9c4;}
+  .stat span{font-size:13px;color:#efdbe5;}
+  .hero-visual{position:relative;}
+  .hero-visual img{border-radius:14px;box-shadow:0 18px 40px rgba(60,20,40,.3);width:100%;height:360px;object-fit:cover;}
+  .hero-badge{position:absolute;bottom:-20px;left:-18px;background:#fff;color:var(--brand-dark);border-radius:12px;padding:14px 22px;box-shadow:0 8px 24px rgba(0,0,0,.18);}
+  .hero-badge b{font-size:20px;color:var(--brand);display:block;}
+  .hero-badge small{font-size:12px;color:var(--gray);}
+
+  /* Section common */
+  section{padding:64px 0;}
+  .section-head{text-align:center;max-width:680px;margin:0 auto 44px;}
+  .section-head .eyebrow{color:var(--brand);font-weight:700;letter-spacing:3px;text-transform:uppercase;font-size:13px;}
+  .section-head h3{font-size:30px;color:var(--brand-dark);margin:8px 0 12px;}
+  .section-head p{color:var(--gray);font-size:15px;}
+  .headline-line{width:56px;height:3px;background:var(--accent);margin:12px auto 0;border-radius:2px;}
+
+  /* Company */
+  #company{background:var(--light);}
+  .profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+  .profile-text h4{font-size:22px;color:var(--brand-dark);margin-bottom:14px;}
+  .profile-text p{margin-bottom:14px;color:#3f3338;font-size:15px;}
+  .profile-facts{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .fact{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;}
+  .fact .ic{font-size:22px;margin-bottom:6px;}
+  .fact b{display:block;color:var(--brand-dark);font-size:15px;}
+  .fact small{color:var(--gray);font-size:13px;}
+  .profile-gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .profile-gallery figure{background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--border);}
+  .profile-gallery img{height:200px;width:100%;object-fit:cover;}
+  .profile-gallery figcaption{padding:10px 14px;font-size:13px;color:var(--gray);font-weight:600;}
+  .markets{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;}
+  .markets span{background:var(--brand-soft);color:var(--brand-dark);padding:6px 14px;border-radius:16px;font-size:13px;font-weight:600;}
+
+  /* Products */
+  .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:.25s;display:flex;flex-direction:column;}
+  .card:hover{box-shadow:0 14px 30px rgba(183,106,137,.16);transform:translateY(-4px);}
+  .card-img{height:300px;background:var(--light);display:flex;align-items:center;justify-content:center;padding:18px;}
+  .card-img img{max-height:100%;object-fit:contain;}
+  .card-body{padding:20px;flex:1;display:flex;flex-direction:column;}
+  .card-body h4{font-size:18px;color:var(--brand-dark);margin-bottom:6px;}
+  .card-body .model{font-size:13px;color:var(--gray);margin-bottom:12px;}
+  .specs{list-style:none;margin-bottom:14px;}
+  .specs li{font-size:14px;color:#3f3338;padding:4px 0;border-bottom:1px dashed var(--border);}
+  .specs li b{color:var(--dark);min-width:84px;display:inline-block;}
+  .cert{display:inline-block;background:#f3efe0;color:#9a7420;font-size:12px;font-weight:700;padding:4px 12px;border-radius:12px;margin-bottom:14px;}
+  .cert.eco{background:#e9f5ec;color:#2a8a3e;}
+  .card-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;}
+  .price{font-size:20px;color:#d9531e;font-weight:800;}
+  .price small{font-size:12px;color:var(--gray);font-weight:500;}
+  .enquire{background:var(--brand);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:18px;}
+  .enquire:hover{background:var(--brand-dark);}
+
+  /* Service */
+  #service{background:#fff;}
+  .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .service-item{text-align:center;background:var(--light);border-radius:12px;padding:30px 20px;}
+  .service-item .ic{font-size:36px;margin-bottom:12px;}
+  .service-item h5{font-size:16px;color:var(--brand-dark);margin-bottom:8px;}
+  .service-item p{font-size:13px;color:var(--gray);}
+
+  /* Footer */
+  footer{background:#3a2b33;color:#c9b8c1;}
+  .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;padding:52px 24px;}
+  footer h6{color:#fff;font-size:16px;margin-bottom:16px;}
+  footer ul{list-style:none;}
+  footer ul li{margin-bottom:9px;font-size:14px;}
+  footer .brand p{font-size:14px;margin-top:12px;}
+  footer .contact-line{font-size:14px;margin-bottom:10px;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.1);text-align:center;padding:18px;font-size:13px;color:#a08895;}
+
+  @media(max-width:960px){
+    .hero .container{grid-template-columns:1fr;padding:48px 24px;}
+    .hero h2{font-size:29px;}
+    .profile-grid{grid-template-columns:1fr;}
+    .product-grid{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+    nav.menu{display:none;}
+  }
+  @media(max-width:560px){
+    .product-grid{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr;}
+    .profile-facts{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="contact">
+      <span>Email: sales@lunaviva-apparel.com</span>
+      <span>WhatsApp: +86 138-XXXX-6688</span>
+    </div>
+    <div><span>EN</span><span>USD</span></div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="container navbar">
+    <a class="logo" href="#top">
+      <div class="logo-mark">LV</div>
+      <div class="logo-text">
+        <h1>LunaViva Womenswear</h1>
+        <p>OEM / ODM Ladies' Apparel Supplier</p>
+      </div>
+    </a>
+    <nav class="menu">
+      <a href="#top" class="active">Home</a>
+      <a href="#company">Company Profile</a>
+      <a href="#products">Main Products</a>
+      <a href="#service">Our Service</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="quote-btn" href="#contact">Get a Quote</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-text">
+      <span class="hero-tag">BSCI Audited · OEKO-TEX® Certified Manufacturer</span>
+      <h2>Premium Ladies' Fashion Apparel for <em>Global Fashion Buyers & Brands</em></h2>
+      <p>Founded in Hangzhou, China, LunaViva designs and manufactures dresses, knitwear and denim for women. We support overseas buyers with OEM/ODM production, flexible MOQs, private-label branding and reliable global delivery.</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="#products">View Products</a>
+        <a class="btn-outline" href="#company">About Our Factory</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>10+</b><span>Years Exporting</span></div>
+        <div class="stat"><b>15,000 m²</b><span>Factory Floor</span></div>
+        <div class="stat"><b>30+</b><span>Export Markets</span></div>
+        <div class="stat"><b>800k</b><span>Pieces / Year</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="assets_women/sewing-workshop.jpg" alt="LunaViva modern garment sewing workshop">
+      <div class="hero-badge"><b>OEKO-TEX® Standard 100</b><small>Safe Dyeing · Quality Fabric · Ethical Production</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- Company Profile -->
+<section id="company">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Who We Are</span>
+      <h3>Company Profile</h3>
+      <div class="headline-line"></div>
+      <p>A professional women's wear manufacturer with design, sample-making, mass production and export service all under one roof.</p>
+    </div>
+    <div class="profile-grid">
+      <div class="profile-text">
+        <h4>Your Reliable Ladies' Apparel Manufacturing Partner</h4>
+        <p><strong>LunaViva Womenswear Co., Ltd.</strong> was founded in 2016 and is located in Hangzhou, Zhejiang, China — a famous home of the Chinese apparel and textile industry with complete fabric, accessory and logistics resources. Our company specializes in the design, production and export of women's fashion apparel, mainly including women's dresses, denim jeans and knitwear (cardigans and sweaters).</p>
+        <p>We operate a modern garment factory covering about 15,000 m² with more than 200 skilled tailors and pattern-makers, equipped with automatic cutting machines, flat-seam and overlock sewing lines, a knit knitting workshop and a professional garment quality-control room. Our annual output reaches 800,000 pieces. Every style goes through fabric inspection, sample confirmation, in-line quality check and finished-garment inspection before packing.</p>
+        <div class="profile-facts">
+          <div class="fact">
+            <div class="ic">🏭</div>
+            <b>Factory Strength</b>
+            <small>15,000 m² workshop · 200+ staff · 8 sewing lines · monthly output 60,000+ pieces</small>
+          </div>
+          <div class="fact">
+            <div class="ic">🧵</div>
+            <b>Design & Sampling</b>
+            <small>In-house pattern and sample room; 7–10 days for a new sample; trend design support each season</small>
+          </div>
+          <div class="fact">
+            <div class="ic">✅</div>
+            <b>Quality Control</b>
+            <small>Fabric GSM / color-fastness / size measurement / seam strength / wash test; AQL 2.5 inspection</small>
+          </div>
+          <div class="fact">
+            <div class="ic">🏷️</div>
+            <b>OEM / ODM & Private Label</b>
+            <small>Custom styles, fabric, labels, hangtags, packaging and size charts; brand customization welcome</small>
+          </div>
+        </div>
+        <p style="margin-top:18px;"><strong>Main Export Markets:</strong></p>
+        <div class="markets">
+          <span>Europe (Germany, UK, France, Italy, Spain)</span>
+          <span>North America (USA, Canada)</span>
+          <span>Middle East (UAE, Saudi Arabia)</span>
+          <span>Southeast Asia (Thailand, Vietnam, Philippines)</span>
+          <span>South America (Brazil, Mexico)</span>
+          <span>Oceania (Australia)</span>
+        </div>
+      </div>
+      <div class="profile-gallery">
+        <figure>
+          <img src="assets_women/sewing-workshop.jpg" alt="Garment sewing workshop">
+          <figcaption>Modern Sewing Workshop</figcaption>
+        </figure>
+        <figure>
+          <img src="assets_women/fabric-inspection.jpg" alt="Fabric quality inspection table">
+          <figcaption>Fabric Quality Inspection</figcaption>
+        </figure>
+        <figure style="grid-column:1 / span 2;">
+          <img src="assets_women/fabric-warehouse.jpg" alt="Fabric rolls storage and warehouse" style="height:240px;object-fit:cover;">
+          <figcaption>Fabric Rolls Storage & Cut-Sew Warehouse</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Products -->
+<section id="products">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Featured Styles</span>
+      <h3>Main Products</h3>
+      <div class="headline-line"></div>
+      <p>Three best-selling women's styles with detailed specifications, fabric certifications and competitive FOB prices. Custom colors, sizes and labels are available.</p>
+    </div>
+    <div class="product-grid">
+
+      <!-- Product 1 Dress -->
+      <article class="card">
+        <div class="card-img"><img src="assets_women/product-dress.jpg" alt="Women's floral sleeveless maxi dress DS-2601"></div>
+        <div class="card-body">
+          <h4>Floral Print Sleeveless Maxi Dress</h4>
+          <div class="model">Model No. DS-2601 · Summer Best Seller</div>
+          <ul class="specs">
+            <li><b>Fabric:</b>100% Viscose (rayon), 120 g/m²</li>
+            <li><b>Size:</b>S–XXL (EU/US size chart available)</li>
+            <li><b>Details:</b>Square neck, A-line cut, side pockets, back zipper, fully lined</li>
+            <li><b>Wash:</b>Machine wash cold; color-fastness grade 4</li>
+            <li><b>MOQ:</b>300 pcs / color · Port: Ningbo</li>
+          </ul>
+          <span class="cert">OEKO-TEX® 100 · CE (Textile Safety) Certified</span>
+          <div class="card-foot">
+            <div class="price">US$7.80 <small>/ pc (FOB Ningbo)</small></div>
+            <a class="enquire" href="#contact">Inquiry</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 2 Jeans -->
+      <article class="card">
+        <div class="card-img"><img src="assets_women/product-jeans.jpg" alt="Women's wide-leg denim jeans JN-3205"></div>
+        <div class="card-body">
+          <h4>High-Waist Wide-Leg Denim Jeans</h4>
+          <div class="model">Model No. JN-3205 · Casual Denim Series</div>
+          <ul class="specs">
+            <li><b>Fabric:</b>100% Cotton denim, 12 oz (405 g/m²)</li>
+            <li><b>Size:</b>24–32 waist (US size) · inseam customizable</li>
+            <li><b>Details:</b>Button fly, five-pocket, brushed finish, branded rivets, stretch option available</li>
+            <li><b>Wash:</b>Enzyme stone wash; minimum shrinkage ≤3%</li>
+            <li><b>MOQ:</b>300 pcs / color · Port: Ningbo</li>
+          </ul>
+          <span class="cert">OEKO-TEX® 100 · STANDARD 100 Certified</span>
+          <div class="card-foot">
+            <div class="price">US$9.50 <small>/ pc (FOB Ningbo)</small></div>
+            <a class="enquire" href="#contact">Inquiry</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 3 Cardigan -->
+      <article class="card">
+        <div class="card-img"><img src="assets_women/product-cardigan.jpg" alt="Women's V-neck button knit cardigan CD-1802"></div>
+        <div class="card-body">
+          <h4>V-Neck Button Front Knit Cardigan</h4>
+          <div class="model">Model No. CD-1802 · Autumn / Winter Knitwear</div>
+          <ul class="specs">
+            <li><b>Fabric:</b>Acrylic / Cotton blend knit, 90% Acrylic + 10% Cotton, 320 g</li>
+            <li><b>Size:</b>S–XL · ribbed cuffs and hem</li>
+            <li><b>Details:</b>V-neck, front button closure, two front pockets, relaxed fit</li>
+            <li><b>Features:</b>Anti-pilling, soft hand feel, available in 8 basic colors</li>
+            <li><b>MOQ:</b>200 pcs / color · Port: Ningbo</li>
+          </ul>
+          <span class="cert eco">OEKO-TEX® 100 · Low Formaldehyde Certified</span>
+          <div class="card-foot">
+            <div class="price">US$8.20 <small>/ pc (FOB Ningbo)</small></div>
+            <a class="enquire" href="#contact">Inquiry</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Service -->
+<section id="service">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why Choose Us</span>
+      <h3>Our Service &amp; Advantages</h3>
+      <div class="headline-line"></div>
+    </div>
+    <div class="service-grid">
+      <div class="service-item">
+        <div class="ic">✂️</div>
+        <h5>OEM / ODM Design Support</h5>
+        <p>From your sketch, photo or sample to finished garment; seasonal trend design and size-chart service included.</p>
+      </div>
+      <div class="service-item">
+        <div class="ic">🧶</div>
+        <h5>Quality &amp; Fabric Safety</h5>
+        <p>OEKO-TEX® certified fabrics, AQL 2.5 inspection, wash and color-fastness tests before shipment.</p>
+      </div>
+      <div class="service-item">
+        <div class="ic">🚚</div>
+        <h5>Flexible MOQ &amp; Fast Lead Time</h5>
+        <p>Sample in 7–10 days; bulk order 25–35 days; air, sea and rail shipping, door-to-door available.</p>
+      </div>
+      <div class="service-item">
+        <div class="ic">🏷️</div>
+        <h5>Private Label Packaging</h5>
+        <p>Custom woven labels, hangtags, poly bags, shipping marks and retail-ready gift boxes for your brand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+  <div class="container footer-top">
+    <div class="brand">
+      <h6>LunaViva Womenswear Co., Ltd.</h6>
+      <p>A professional ladies' wear manufacturer since 2016, helping fashion brands, wholesalers and boutique buyers source stylish, safe and cost-effective apparel.</p>
+    </div>
+    <div>
+      <h6>Quick Links</h6>
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#company">Company Profile</a></li>
+        <li><a href="#products">Main Products</a></li>
+        <li><a href="#service">Our Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6>Product Categories</h6>
+      <ul>
+        <li>Women's Dresses</li>
+        <li>Denim Jeans &amp; Pants</li>
+        <li>Knitwear &amp; Cardigans</li>
+        <li>Custom Ladies' Styles</li>
+      </ul>
+    </div>
+    <div>
+      <h6>Contact Us</h6>
+      <div class="contact-line">📍 No. 66, Fashion Avenue, Yuhang District, Hangzhou, Zhejiang, China</div>
+      <div class="contact-line">📞 Tel: +86-571-XXXX-6688</div>
+      <div class="contact-line">📧 Email: sales@lunaviva-apparel.com</div>
+      <div class="contact-line">💬 WhatsApp / WeChat: +86 138-XXXX-6688</div>
+      <div class="contact-line">🕘 Working Time: Mon–Sat 8:30–18:00 (GMT+8)</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 LunaViva Womenswear Co., Ltd. All Rights Reserved · FOB Ningbo · Payment Terms: T/T, L/C, Trade Assurance
+  </div>
+</footer>
+
+</body>
+</html>
